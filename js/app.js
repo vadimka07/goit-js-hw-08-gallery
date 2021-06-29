@@ -82,14 +82,12 @@ gallery.addEventListener( 'click', ( e ) => {
     originalImage.src = e.target.dataset.src;
 } );
 
-buttonClose.addEventListener( 'click', () => {
+function closePopup(){
     popup.classList.remove( 'is-open' );
     document.body.classList.remove( 'body__hidden' );
     originalImage.src = '';
-} );
+}
 
-overlayClosePopup.addEventListener( 'click', () => {
-    popup.classList.remove( 'is-open' );
-    document.body.classList.remove( 'body__hidden' );
-    originalImage.src = '';
-} );
+buttonClose.addEventListener( 'click', closePopup );
+
+overlayClosePopup.addEventListener( 'click', closePopup );
